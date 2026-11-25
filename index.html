@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="45-day .NET interview preparation with English answers and Hinglish explanations.">
+<meta name="description" content="45-day .NET interview preparation for 4–5 year developers: C#, ASP.NET MVC and Core, SQL/DB2, Web API, Entity Framework. English answers with Hinglish explanations.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>.NET Prep 45</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,17 +11,82 @@
 </head>
 <body>
 <header>
-<div class="brand">.NET Prep <span>45</span></div>
+<a class="brand" href="index.html">.NET Prep <span>45</span></a>
 <div class="prog"><span id="pt">Day 1 of 45</span><div class="bar"><i id="pb" style="width:2%"></i></div><span id="pp">2%</span></div>
-<nav id="nav"><a href="#today" data-v="today">Today</a><a href="#roadmap" data-v="roadmap">Roadmap</a><a href="#weak" data-v="weak">Weak areas</a><a href="#search" data-v="search">Search</a></nav>
+<nav><a class="on" href="index.html">Home</a><a href="prepare.html">Prepare</a><a href="prepare.html#roadmap">Roadmap</a><a href="prepare.html#search">Search</a></nav>
 </header>
-<div class="wrap">
-<aside><button class="btn" id="sideBtn" style="width:100%;display:none">All 45 days</button><div class="side-list" id="side"></div></aside>
-<main id="main"></main>
+
+<section class="hero">
+<div class="hero-in">
+<div class="hero-txt">
+<h1>Crack your 4–5 year .NET interview in 45 days</h1>
+<p>One topic block a day across C#, ASP.NET MVC and Core, SQL and IBM DB2, Web API and Entity Framework. Every answer comes in English you can speak, with a Hinglish explanation so the concept actually clicks.</p>
+<div class="cta"><a class="p" id="ctaToday" href="prepare.html">Start Day 1</a><a class="s" href="#modules">See all topics</a></div>
+<div class="stats"><div><b>45</b><span>days</span></div><div><b>11</b><span>modules</span></div><div><b id="sDays">1</b><span>days published</span></div><div><b id="sQ">17</b><span>questions so far</span></div></div>
 </div>
+<div class="demo" aria-label="Example question card">
+<span class="tag">Scenario</span>
+<h3>A DB2 column can be NULL. How do you handle it in C#?</h3>
+<div class="box en"><div class="lbl">Interview answer · English</div><p>A DB NULL comes back as DBNull.Value, not C# null, so a direct cast throws. I map nullable columns to types like decimal? and check for DBNull when reading.</p></div>
+<div class="box hi"><div class="lbl">Samjho · Hinglish</div><p>Database ka NULL aur C# ka null alag cheezein hain. Seedha cast karoge to exception aayega, isliye pehle check karo.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band" id="modules">
+<div class="band-in">
+<h2>What we'll prepare</h2>
+<p class="lead">Eleven modules, ordered by how often they come up for mid-level .NET roles. C#, SQL/DB2, MVC, Core, Web API and EF get the most time.</p>
+<div class="mods" id="mods"></div>
+</div>
+</section>
+
+<section class="band alt">
+<div class="band-in">
+<h2>How each day works</h2>
+<div class="steps">
+<div class="card step"><h3>Concepts</h3><p>The day's topics explained in simple Hinglish, with analogies.</p></div>
+<div class="card step"><h3>15–20 questions</h3><p>Interview answer, Hinglish explanation, code, follow-ups and a tip for each.</p></div>
+<div class="card step"><h3>Scenarios</h3><p>At least five practical "suppose this happens in production" questions.</p></div>
+<div class="card step"><h3>Coding + SQL</h3><p>Two C# and two DB2 exercises. Try them first, solutions come later.</p></div>
+<div class="card step"><h3>Test yourself</h3><p>Five questions with no answers shown, to check what stuck.</p></div>
+<div class="card step"><h3>Revision</h3><p>A one-screen summary to re-read before the interview.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="band-in">
+<h2>The 45-day plan</h2>
+<div class="weeks" id="weeks"></div>
+<div class="cta"><a class="p" href="prepare.html#roadmap" style="background:var(--acc);color:var(--accInk)">Open the full roadmap</a></div>
+</div>
+</section>
+
+<footer>.NET Prep 45 · free interview preparation · progress marks stay in your own browser</footer>
+
 <script src="data/roadmap.js"></script>
-<!-- Add one line per new day -->
-<script src="data/day-01.js"></script>
-<script src="assets/app.js"></script>
+<script src="data/modules.js"></script>
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const P=window.PUBLISHED||1,R=window.ROAD,pct=Math.round(P/45*100);
+document.getElementById("pt").textContent="Day "+P+" of 45";
+document.getElementById("pb").style.width=Math.max(pct,2)+"%";
+document.getElementById("pp").textContent=pct+"%";
+document.getElementById("sDays").textContent=P;
+document.getElementById("sQ").textContent=window.QCOUNT||17;
+const c=document.getElementById("ctaToday");c.href="prepare.html#day-"+P;c.textContent=P===1?"Start Day 1":"Continue with Day "+P;
+document.getElementById("mods").innerHTML=window.MODULES.map(m=>{
+const d=m.days;let foot,bar="";
+if(!d){foot=`<span class="kick">Practised every day</span><a href="prepare.html#day-${P}">Today's exercises →</a>`}
+else{const tot=d[1]-d[0]+1,done=Math.max(0,Math.min(P,d[1])-d[0]+1),w=Math.round(done/tot*100);
+bar=`<div class="mbar"><i style="width:${w}%"></i></div>`;
+foot=`<span class="kick">${d[0]===d[1]?"Day "+d[0]:"Days "+d[0]+"–"+d[1]} · ${done}/${tot} ready</span>`+(done?`<a href="prepare.html#day-${d[0]}">Study →</a>`:`<a href="prepare.html#roadmap">Coming soon</a>`)}
+return `<article class="card mod"><div class="mod-h"><h3>${esc(m.t)}</h3><span class="mod-n">Module ${m.n}</span></div><div class="chips">${m.topics.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>${bar}<div class="mod-f">${foot}</div></article>`}).join("");
+const wk={};for(const [n,b] of R){(wk[b]=wk[b]||[]).push(n)}
+document.getElementById("weeks").innerHTML=Object.entries(wk).map(([b,ns],i)=>`<div class="card wkc"><span>Week ${i+1} · Days ${ns[0]}–${ns[ns.length-1]}</span><b>${esc(b)}</b></div>`).join("");
+}
+</script>
 </body>
 </html>

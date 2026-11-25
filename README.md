@@ -19,16 +19,19 @@ Open the live site (GitHub Pages) or download this repo and open `index.html` in
 ## Structure
 
 ```
-index.html          page shell
+index.html          home page: modules, topics, plan
+prepare.html        study page: daily Q&A, coding, SQL, revision
 assets/style.css    styles (light and dark)
 assets/app.js       rendering, tabs, search, marks
-data/roadmap.js     the 45-day plan
+data/roadmap.js     the 45-day plan + published-day counter
+data/modules.js     the 11 modules and their topics
 data/day-01.js      Day 1 content (one file per day)
 ```
 
 ## Adding a day
 
 1. Copy `data/day-01.js` to `data/day-NN.js` and change `DAYS[1]` to `DAYS[NN]`.
-2. Add `<script src="data/day-NN.js"></script>` in `index.html` before `assets/app.js`.
+2. Add `<script src="data/day-NN.js"></script>` in `prepare.html` before `assets/app.js`.
+3. In `data/roadmap.js`, bump `PUBLISHED` and `QCOUNT`.
 
 New days are added as the preparation progresses.

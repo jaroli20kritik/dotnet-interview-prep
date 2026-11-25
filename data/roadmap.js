@@ -9,3 +9,6 @@ window.ROAD=[
 [42,"Final week","Full technical mock 1"],[43,"Final week","Full technical mock 2"],[44,"Final week","Weak-areas drill"],[45,"Final week","Final revision + HR mock"]];
 window.DAYS={};
 window.WEAK=[];
+/* Number of days published so far: bump this when a new day file is added */
+window.PUBLISHED=1;
+window.QCOUNT=17; /* total questions published */
