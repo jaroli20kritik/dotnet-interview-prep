@@ -7,21 +7,23 @@
 <title>Prepare · .NET Prep 45</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
-<header>
+<header class="top"><div class="top-in">
 <a class="brand" href="index.html">.NET Prep <span>45</span></a>
 <div class="prog"><span id="pt">Day 1 of 45</span><div class="bar"><i id="pb" style="width:2%"></i></div><span id="pp">2%</span></div>
+<button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 <nav id="nav"><a href="index.html">Home</a><a href="#today" data-v="today">Today</a><a href="#roadmap" data-v="roadmap">Roadmap</a><a href="#weak" data-v="weak">Weak areas</a><a href="#search" data-v="search">Search</a></nav>
-</header>
+</div></header>
 <div class="wrap">
-<aside><button class="btn" id="sideBtn" style="width:100%;display:none">All 45 days</button><div class="side-list" id="side"></div></aside>
+<aside><button class="side-toggle" id="sideBtn" aria-expanded="false" aria-controls="side"><span id="sideLbl">All 45 days</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="side-list" id="side"></div></aside>
 <main id="main"></main>
 </div>
 <script src="data/roadmap.js"></script>
 <!-- Add one line per new day -->
 <script src="data/day-01.js"></script>
-<script src="assets/app.js?v=3"></script>
+<script src="assets/app.js?v=4"></script>
+<script src="assets/site.js?v=4"></script>
 </body>
 </html>
