@@ -99,3 +99,4 @@ input[type=search]{width:100%;font:inherit;font-size:16px;padding:12px 14px;bord
 .weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:12px}
 .wkc{padding:16px}.wkc b{display:block;font-family:'Space Grotesk',sans-serif;font-size:16px}.wkc span{font-size:13px;color:var(--mut)}
 footer{padding:28px max(5vw,16px);color:var(--mut);font-size:14px;text-align:center}
+@media(max-width:600px){header{position:static}nav a{padding:10px 12px}}
