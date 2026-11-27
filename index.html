@@ -7,7 +7,7 @@
 <title>.NET Prep 45</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5">
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 <header class="top"><div class="top-in">
@@ -51,6 +51,7 @@
 <div class="card step"><h3>Scenarios</h3><p>At least five practical "suppose this happens in production" questions.</p></div>
 <div class="card step"><h3>Coding + SQL</h3><p>Two C# and two DB2 exercises. Try them first, solutions come later.</p></div>
 <div class="card step"><h3>Test yourself</h3><p>Five questions with no answers shown, to check what stuck.</p></div>
+<div class="card step"><h3>Word meanings</h3><p>Hover any word for 2 seconds, or press and hold on phone, to see its Hinglish meaning.</p></div>
 <div class="card step"><h3>Revision</h3><p>A one-screen summary to re-read before the interview.</p></div>
 </div>
 </div>
@@ -64,7 +65,7 @@
 </div>
 </section>
 
-<footer>.NET Prep 45 · free interview preparation · progress marks stay in your own browser</footer>
+<footer>.NET Prep 45 · free interview preparation · hover any word for 2 seconds (press and hold on phone) for its Hinglish meaning · progress marks stay in your own browser</footer>
 
 <script src="data/roadmap.js"></script>
 <script src="data/modules.js"></script>
@@ -91,6 +92,8 @@ const wk={};for(const [n,b] of R){(wk[b]=wk[b]||[]).push(n)}
 document.getElementById("weeks").innerHTML=Object.entries(wk).map(([b,ns],i)=>`<div class="card wkc"><span>Week ${i+1} · Days ${ns[0]}–${ns[ns.length-1]}</span><b>${esc(b)}</b></div>`).join("");
 }
 </script>
+<script src="data/glossary.js?v=6"></script>
+<script src="assets/tooltip.js?v=6"></script>
 <script src="assets/site.js?v=4"></script>
 </body>
 </html>
